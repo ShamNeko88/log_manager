@@ -12,4 +12,5 @@
         __name__, "log.txt", log_level=10, debug_mode=True
     )
     log.logger.debug("test")
+    > [DEBUG] date time -test <場所: "ファイル名.py"/"module名"/xx行目>
     ```

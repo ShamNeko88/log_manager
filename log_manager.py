@@ -11,6 +11,7 @@
         __name__, "log.txt", log_level=10, debug_mode=True
     )
     log.logger.debug("test")
+    > [DEBUG] date time -test <場所: "ファイル名.py"/"module名"/xx行目>
     ```
 """
 import logging
@@ -39,9 +40,9 @@ class LogHandler():
                  backup_count: int = 2,
                  encoding: str = "utf-8"):
         # フォーマット（ファイル）
-        self.log_file_format = logging.Formatter("[%(levelname)s] %(asctime)s -%(message)s <場所：%(filename)s/%(funcName)s/%(lineno)d行目>")
+        self.log_file_format = logging.Formatter("[%(levelname)s] %(asctime)s -%(message)s <場所: %(filename)s/%(funcName)s/%(lineno)d行目>")
         # フォーマット（コンソール）
-        self.log_console_format = logging.Formatter("[%(levelname)s] %(asctime)s -%(message)s <場所：%(filename)s/%(funcName)s/%(lineno)d行目>")
+        self.log_console_format = logging.Formatter("[%(levelname)s] %(asctime)s -%(message)s <場所: %(filename)s/%(funcName)s/%(lineno)d行目>")
         # loggerの作成
         self.logger = logging.getLogger(logger_name)
         # logレベル設定
