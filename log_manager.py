@@ -64,5 +64,7 @@ class LogHandler():
 
 if __name__ == "__main__":
     import log_manager
-    log = log_manager.LogHandler(__name__, "log.txt", log_level=10, debug_mode=True)
+    log = log_manager.LogHandler(
+        __name__, "log.txt", log_level=10, debug_mode=True
+    )
     log.logger.debug("test")
