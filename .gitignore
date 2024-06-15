@@ -1,0 +1,5 @@
+venv
+tests
+.gitignore
+log.txt
+__pychache__
