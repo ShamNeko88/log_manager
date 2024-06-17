@@ -18,16 +18,16 @@ from logging.handlers import RotatingFileHandler as r_handler
 class LogHandler():
     """
     Summary:
-        - ログのファイル出力等を簡易的にする
+        ログのファイル出力等を簡易的にする
 
     Args:
-        - logger_name:   基本は「__name__」想定
-          - log_file:    指定することでログファイルを出力
-          - log_level:   デフォルトですべて出力(CRITICAL:50, ERROR:40, WARNING:30, INFO:20, DEBUG:10, NOTSET:0)
-          - debug_mode:  True明示指定でコンソールに出力
-          - max_bytes:   ログファイルの最大バイト数
-          - backup_cout: 最大バイト超えたときに保持しておくファイル数
-          - encoding:    文字コード指定
+        logger_name:   基本は「__name__」想定
+        log_file:      指定することでログファイルを出力
+        log_level:     デフォルトですべて出力(CRITICAL:50, ERROR:40, WARNING:30, INFO:20, DEBUG:10, NOTSET:0)
+        debug_mode:    True明示指定でコンソールに出力
+        max_bytes:     ログファイルの最大バイト数
+        backup_count:   最大バイト超えたときに保持しておくファイル数
+        encoding:      文字コード指定
     """
     def __init__(self, logger_name: str,
                  log_file: str = None,
