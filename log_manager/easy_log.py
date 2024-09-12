@@ -3,7 +3,6 @@ logのファイル出力等の操作を簡易的に行う
 
 Example:
     log.txt及びコンソールにログを出力
-
     >>>import log_manager
     >>>log_ins = log_manager.LogHandler(
     ...    __name__, "log.txt", log_level=10, debug_mode=True

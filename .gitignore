@@ -3,3 +3,6 @@ tests
 .gitignore
 log.txt
 __pycache__
+dist
+pyproject.toml
+log_manager.egg-info
