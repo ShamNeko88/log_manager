@@ -12,6 +12,7 @@ Example:
     [DEBUG] date time -test <場所: "ファイル名.py"/"module名"/xx行目>
 """
 import logging
+import os
 from logging.handlers import RotatingFileHandler as r_handler
 
 
@@ -46,9 +47,17 @@ class LogHandler():
         self.logger.setLevel(log_level)
         # logファイル出力先とファイルの最大バイト数、ファイル数設定
         if log_file:
-            file_handler = r_handler(log_file, maxBytes=max_bytes,
-                                     backupCount=backup_count,
-                                     encoding=encoding)
+            # ディレクトリ作成
+            log_dir = os.path.dirname(log_file)
+            if log_dir:
+                os.makedirs(log_dir, exist_ok=True)
+
+            file_handler = r_handler(
+                log_file,
+                maxBytes=max_bytes,
+                backupCount=backup_count,
+                encoding=encoding
+            )
             file_handler.setFormatter(self.log_file_format)
             self.logger.addHandler(file_handler)
 
